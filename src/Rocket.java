@@ -50,7 +50,9 @@ public class Rocket {
     }
 }
 
-/** getFlightTime method is repetitive,
+/**
+ * Question:
+ * getFlightTime method is repetitive,
  * either create method that returns yVelocity,
  * or yVelocity attribute, calculated upon construction
  * (getters and setters?)
