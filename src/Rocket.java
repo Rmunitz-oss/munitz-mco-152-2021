@@ -7,7 +7,7 @@ public class Rocket {
         this.velocity = velocity;
         this.angle = Math.toRadians(angle);
     }
-    /**change methods to use these instead?
+    /*change methods to use these instead?
     public double getXVelocity (){
         return Math.cos(angle) * velocity;
 
@@ -16,7 +16,7 @@ public class Rocket {
         return Math.sin(angle) * velocity;
 
     }
-    **/
+    */
 
     /**
      *
@@ -50,7 +50,7 @@ public class Rocket {
     }
 }
 
-/**
+/*
  * Question:
  * getFlightTime method is repetitive,
  * either create method that returns yVelocity,
@@ -58,4 +58,4 @@ public class Rocket {
  * (getters and setters?)
  * double yVelocity = getYVelocity();
  * etc.
- **/
+ */
