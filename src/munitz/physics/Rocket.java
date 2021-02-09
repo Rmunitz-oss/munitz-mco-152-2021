@@ -1,6 +1,6 @@
 package munitz.physics;
 public class Rocket {
-    private final double GRAVITY  = 9.8;
+    private static final double GRAVITY  = 9.8;
     private final double velocity;
     private final double angle;
 
