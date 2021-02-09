@@ -1,4 +1,4 @@
-package munitz.
+package munitz.scrabble;
 import org.junit.Assert;
 import org.junit.Test;
 
