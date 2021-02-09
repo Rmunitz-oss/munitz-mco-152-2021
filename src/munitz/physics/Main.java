@@ -1,3 +1,4 @@
+package munitz.physics;
 public class Main {
     public static void main(String[] args) {
        Rocket rocket = new Rocket(71,35);

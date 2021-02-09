@@ -1,3 +1,4 @@
+package munitz.scrabble;
 import java.io.*;
 import java.util.*;
 
