@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<GridPane fx:controller="munitz.scrabble.DictionaryController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <Label text="Dictionary file path:"
+           GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="filePathField"
+               GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+    <Label text="Word to search:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="wordToFindField"
+               GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Button text="Search" onAction="#searchDictionary"
+            GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text=" Search Results:"
+           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Text fx:id="searchResultText"
+          GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+</GridPane>

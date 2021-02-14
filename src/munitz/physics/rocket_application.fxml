@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<GridPane fx:controller="munitz.physics.RocketController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Label text="Velocity:"
+           GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="velocityField"
+            GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+    <Label text="Angle:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="angleField"
+            GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Seconds:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="secondsField"
+            GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Button text="Calculate" onAction="#calculateRocket"
+            GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <Label text="Flight time: "
+           GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <Text fx:id="flightTimeText"
+               GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label text="X coordinate : "
+           GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <Text fx:id="xCoordinateText"
+          GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+    <Label text="Y coordinate : "
+           GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <Text fx:id="yCoordinateText"
+          GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+</GridPane>
+

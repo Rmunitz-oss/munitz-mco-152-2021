@@ -9,6 +9,7 @@ public class Dictionary {
      * @param filePath of dictionary text file
      */
     public Dictionary(String filePath) {
+
         this.dictionaryEntries = buildDictionary(filePath);
     }
 

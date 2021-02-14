@@ -5,7 +5,7 @@ import org.junit.Test;
 public class DictionaryTest {
     @Test
     public void findWord() {
-        String filePath = "C:/Users/roche/IdeaProjects/Word Search/src/dictionary.txt";
+        String filePath = "C:/Users/roche/IdeaProjects/munitz -mco152-2021/src/munitz/scrabble/dictionary.txt";
         Dictionary file = new Dictionary(filePath);
         boolean successfulSearch = file.findWord("ASH");
         Assert.assertTrue(successfulSearch);
