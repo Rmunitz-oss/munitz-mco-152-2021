@@ -9,7 +9,6 @@ public class Dictionary {
      * @param filePath of dictionary text file
      */
     public Dictionary(String filePath) {
-
         this.dictionaryEntries = buildDictionary(filePath);
     }
 
@@ -26,7 +25,7 @@ public class Dictionary {
             }
         }
         catch (FileNotFoundException error){
-            System.out.println(error.getMessage());
+            error.printStackTrace();
 
         }
         return dictionaryEntries;
@@ -38,12 +37,9 @@ public class Dictionary {
      * @return true if found, false if not
      */
     public boolean findWord (String wordToFind){
-        for (String word : dictionaryEntries)
-        {
-            if (wordToFind.equals(word)){
-                return true;
-            }
-        }
-        return false;
+        String[] dictionaryArray = dictionaryEntries.toArray(new String[0]);
+        Arrays.sort(dictionaryArray);
+        return Arrays.binarySearch(dictionaryArray, wordToFind.toUpperCase()) > 0;
+
     }
 }

@@ -1,14 +1,21 @@
 package munitz.scrabble;
 import org.junit.Assert;
 import org.junit.Test;
+import java.io.FileNotFoundException;
 
 public class DictionaryTest {
     @Test
-    public void findWord() {
-        String filePath = "C:/Users/roche/IdeaProjects/munitz -mco152-2021/src/munitz/scrabble/dictionary.txt";
+    public void findWordTrue() throws FileNotFoundException {
+        String filePath = "src/munitz/scrabble/dictionary.txt";
         Dictionary file = new Dictionary(filePath);
-        boolean successfulSearch = file.findWord("ASH");
+        boolean successfulSearch = file.findWord("Ash");
         Assert.assertTrue(successfulSearch);
+
+    }
+    @Test
+    public void findWordFalse() throws FileNotFoundException{
+        String filePath = "src/munitz/scrabble/dictionary.txt";
+        Dictionary file = new Dictionary(filePath);
         boolean failedSearch = file.findWord("XYZ");
         Assert.assertFalse(failedSearch);
     }
