@@ -10,13 +10,14 @@ public class RocketApplication extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("rocket_application.fxml"));
-        Scene scene = new Scene(root, 300, 275);
+        Scene scene = new Scene(root, 300, 500);
         stage.setTitle("Rocket Calculator");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
+
         launch(args);
     }
 }
