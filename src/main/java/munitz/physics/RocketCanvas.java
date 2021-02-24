@@ -16,7 +16,7 @@ public class RocketCanvas extends Canvas {
         context.translate(0,getHeight());
         context.setFill(Color.BLACK);
         context.beginPath();
-        for (double time = 0; time < rocket.getFlightTime()+1; time +=0.5){
+        for (double time = 0; time < rocket.getFlightTime(); time +=0.5){
             double x = rocket.getX(time);
             double y = rocket.getY(time);
             context.fillOval(x,-y,10,10);
