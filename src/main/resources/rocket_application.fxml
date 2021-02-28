@@ -2,7 +2,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Text?>
 <?import munitz.physics.RocketCanvas?>
 
 <GridPane fx:controller="munitz.physics.RocketController"
@@ -27,20 +26,9 @@
     <Button text="Calculate" onAction="#calculateRocket"
             GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Label text="X coordinate : "
-           GridPane.columnIndex="0" GridPane.rowIndex="4" />
-    <Text fx:id="xCoordinateText"
-          GridPane.columnIndex="1" GridPane.rowIndex="4" />
-
-    <Label text="Y coordinate : "
-           GridPane.columnIndex="0" GridPane.rowIndex="5" />
-    <Text fx:id="yCoordinateText"
-          GridPane.columnIndex="1" GridPane.rowIndex="5" />
-
-    <Label text="Total flight time: "
-           GridPane.columnIndex="0" GridPane.rowIndex="6" />
-    <Text fx:id="flightTimeText"
-          GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <Label fx:id="locationLabel"
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="4" GridPane.columnSpan="2"/>
 
     <RocketCanvas fx:id="rocketCanvas"
                   width="200"
