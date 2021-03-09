@@ -11,7 +11,7 @@
     <Label text="Word to search:"
            GridPane.columnIndex="0" GridPane.rowIndex="1" />
     <TextField fx:id="wordToFindField"
-               GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
     <Button text="Search" onAction="#searchDictionary"
             GridPane.columnIndex="1" GridPane.rowIndex="2" />

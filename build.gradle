@@ -7,8 +7,8 @@ apply plugin: 'application'
 
 // This is the class with the main to run when the application starts.
 //mainClassName = 'munitz.physics.RocketApplication'
-mainClassName = 'munitz.scrabble.ScrabbleApplication'
-
+//mainClassName = 'munitz.scrabble.ScrabbleApplication'
+mainClassName = 'munitz.scrabble.ScrabbleBoardApplication'
 
 repositories {
     mavenCentral()

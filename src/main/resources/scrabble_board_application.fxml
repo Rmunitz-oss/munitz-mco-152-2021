@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane fx:controller="munitz.scrabble.ScrabbleBoardController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center"  hgap="10" vgap="10">
+<padding><Insets top="5" right="10" bottom="5" left="10"/></padding>
+
+       <Label text=" " fx:id="label1"
+              GridPane.columnIndex="0" GridPane.rowIndex="0"
+              style=" -fx-border-color:grey; -fx-padding: 5 10 5 10;"/>
+       <Label text=" "
+              GridPane.columnIndex="1" GridPane.rowIndex="0"
+              style=" -fx-border-color:grey;  -fx-padding: 5 10 5 10;"/>
+       <Label text=" "
+              GridPane.columnIndex="2" GridPane.rowIndex="0"
+              style=" -fx-border-color:grey;  -fx-padding: 5 10 5 10;"/>
+       <Label text=" "
+              GridPane.columnIndex="3" GridPane.rowIndex="0"
+              style=" -fx-border-color:grey; -fx-padding: 5 10 5 10;"/>
+       <Label text=" "
+              GridPane.columnIndex="4" GridPane.rowIndex="0"
+              style=" -fx-border-color:grey;  -fx-padding: 5 10 5 10;"/>
+       <Label text=" "
+              GridPane.columnIndex="5" GridPane.rowIndex="0"
+              style=" -fx-border-color:grey;  -fx-padding: 5 10 5 10;"/>
+       <Label text=" "
+              GridPane.columnIndex="6" GridPane.rowIndex="0"
+              style=" -fx-border-color:grey; -fx-padding: 5 10 5 10;"/>
+
+       <Button fx:id="submitButton"
+               text = "Submit"
+               GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="4"
+               style="-fx-border-width:2; -fx-border-color:grey;"/>
+       <Button fx:id="clearButton"
+               text = "Clear"
+               GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="4"
+               style="-fx-border-width:2; -fx-border-color:grey;"/>
+       <Button fx:id="pointsButton"
+               text = "Calculate Points"
+               GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.columnSpan="4"
+               style="-fx-border-width:2; -fx-border-color:grey;"/>
+       <Button text=" "
+              GridPane.columnIndex="0" GridPane.rowIndex="6"
+               style ="-fx-padding: 5 10 5 10; -fx-border-color:grey;"/>
+       <Button text=" "
+              GridPane.columnIndex="1" GridPane.rowIndex="6"
+               style ="-fx-padding: 5 10 5 10; -fx-border-color:grey;"/>
+       <Button text=" "
+              GridPane.columnIndex="2" GridPane.rowIndex="6"
+               style ="-fx-padding: 5 10 5 10; -fx-border-color:grey;"/>
+       <Button text=" "
+              GridPane.columnIndex="3" GridPane.rowIndex="6"
+               style ="-fx-padding: 5 10 5 10; -fx-border-color:grey;"/>
+       <Button text=" "
+              GridPane.columnIndex="4" GridPane.rowIndex="6"
+               style ="-fx-padding: 5 10 5 10; -fx-border-color:grey;"/>
+       <Button text=" "
+              GridPane.columnIndex="5" GridPane.rowIndex="6"
+               style ="-fx-padding: 5 10 5 10; -fx-border-color:grey;"/>
+       <Button text=" "
+              GridPane.columnIndex="6" GridPane.rowIndex="6"
+               style ="-fx-padding: 5 10 5 10; -fx-border-color:grey;"/>
+
+</GridPane>
