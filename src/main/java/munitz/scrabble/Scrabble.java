@@ -11,6 +11,7 @@ public class Scrabble {
             wordsToDefinition.put(reader.next(),reader.nextLine().trim());
         }
     }
+
     /**
      * searches dictionary for desired word
      * @param  wordToFind in dictionary
@@ -18,7 +19,6 @@ public class Scrabble {
      */
     public boolean findWord (String wordToFind){
         return wordsToDefinition.containsKey(wordToFind.toUpperCase());
-
     }
 
     /**

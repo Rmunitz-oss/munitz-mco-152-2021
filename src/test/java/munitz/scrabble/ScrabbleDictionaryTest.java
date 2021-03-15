@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import java.io.FileNotFoundException;
 
-public class ScrabbleTest {
+public class ScrabbleDictionaryTest {
     @Test
     public void findValidWord() throws FileNotFoundException {
         Scrabble scrabble = new Scrabble();

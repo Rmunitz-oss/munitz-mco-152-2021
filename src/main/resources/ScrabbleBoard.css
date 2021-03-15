@@ -1,0 +1,18 @@
+Label{
+-fx-border-color:grey;
+-fx-min-width:25;
+-fx-min-height:30;
+-fx-padding: 5 10 5 10;
+ }
+
+Button.gameButton{
+-fx-border-width:0;
+-fx-background-color:lightgrey;
+}
+
+Button{
+-fx-border-color:grey;
+-fx-min-width:25;
+-fx-min-height:30;
+-fx-padding: 5 10 5 10;
+}
