@@ -45,6 +45,9 @@
        <Button text=" " fx:id = "letterButton5" onMouseClicked="#onLetterButtonClicked" GridPane.columnIndex="5" GridPane.rowIndex="6"/>
        <Button text=" " fx:id = "letterButton6" onMouseClicked="#onLetterButtonClicked" GridPane.columnIndex="6" GridPane.rowIndex="6"/>
 
+       <Label fx:id = "invalidWordLabel" styleClass="infoLabel" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="3" />
+       <Label fx:id = "gameOverLabel"    styleClass="infoLabel" GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="3" />
+
        <fx:define>
               <ArrayList fx:id="answerLabels">
                      <fx:reference source="answerLabel0"/>

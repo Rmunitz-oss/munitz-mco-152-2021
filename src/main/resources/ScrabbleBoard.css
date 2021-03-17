@@ -4,6 +4,12 @@ Label{
 -fx-min-height:30;
 -fx-padding: 5 10 5 10;
  }
+Label.infoLabel{
+-fx-border-width:0;
+-fx-min-width:10;
+-fx-min-height:20;
+
+}
 
 Button.gameButton{
 -fx-border-width:0;

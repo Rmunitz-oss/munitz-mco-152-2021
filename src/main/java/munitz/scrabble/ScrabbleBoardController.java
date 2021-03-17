@@ -14,11 +14,14 @@ public class ScrabbleBoardController{
     List<Button>letterButtons;
     @FXML
     Label pointsLabel;
+    @FXML
+    Label invalidWordLabel;
+    @FXML
+    Label gameOverLabel;
 
     private LetterBag letterBag = new LetterBag();
     private Scrabble dictionary;
     private int points;
-
     public ScrabbleBoardController (){
         try{
             dictionary = new Scrabble();
@@ -27,10 +30,8 @@ public class ScrabbleBoardController{
             e.printStackTrace();
         }
     }
+
     @FXML
-    /**
-     * initialize game
-     */
     public void initialize(){
         points = 0;
         for (Button letterButton: letterButtons){
@@ -80,99 +81,79 @@ public class ScrabbleBoardController{
      */
     public void onClear(ActionEvent actionEvent) {
         for(Label answerLetter : answerLabels) {
+            String selectedLetter = answerLetter.getText();
+            for (Button letterButton : letterButtons){
+                if (letterButton.getText().equals("")){
+                    letterButton.setText(selectedLetter);
+                    break;
+                }
+            }
             answerLetter.setText("");
         }
-        //problem: clear means to get new letters?
-        // if not, return letters to the letter buttons
-        //and edit submit to call onClear on an invalid word rather than repetitive code
     }
 
     /**
-     * validate user's word,calculate points, replace empty letter tiles
+     * validate user's word, calculate, replace empty letter tiles
      * @param actionEvent user clicks submit button
      */
     public void onSubmit(ActionEvent actionEvent) {
         StringBuilder word = new StringBuilder();
         for (Label answerLetter : answerLabels){   // get user's word
             if(answerLetter.getText()!=""){
-                String letter = answerLetter.getText();
-                word.append(letter);
+                word.append(answerLetter.getText());
             }
         }
-        int wordLength = word.length();             // calculate word length
-        if(dictionary.findWord(word.toString())){   // validate word exists in dictionary
-            switch (wordLength){
-                case 2: points+=1;
-                    break;
-                case 3: points+=3;
-                    break;
-                case 4: points+=5;
-                    break;
-                case 5: points+=7;
-                    break;
-                case 6: points+=11;
-                    break;
-                case 7: points+=13;
-                    break;
-                default:points+=0;
-                    break;
-            }
-            pointsLabel.setText(String.valueOf(points));
-            onClear(actionEvent);
-            for (Button letterButton: letterButtons) {
-                if ((letterButton.getText() == "") && (!letterBag.isEmpty())) { // if empty need to end game.
-                    letterButton.setText(letterBag.nextLetter());
-                }
-            }
+        if(dictionary.findWord(word.toString())) {  // validate word exists in dictionary
+            calculatePoints(word.length());// calculate points
+            invalidWordLabel.setText("");
         }
         else{
-            //TO DO: add label to tell user their word is invalid
-            //now what? if no valid words possible what to do?
-
-            //return letters of invalid word to letter buttons and clear answer // call onClear instead
-            for (Label answerLetter : answerLabels){
-                if (answerLetter.getText()!=""){
-                    String letter = answerLetter.getText();
-                            for (Button letterButton : letterButtons)
-                            {
-                                if(letterButton.getText() == ""){
-                                    letterButton.setText(letter);
-                                    break;
-                                }
-                            }
-                }
-            }
-            onClear(actionEvent);
+            invalidWordLabel.setText("Invalid word");
         }
+        resetTiles();
+    }
 
-
-        /***
-        // clear letter tiles
-        // fill in empty letter buttons while letter bag is x empty
-        while(!letterBag.isEmpty()){
-            for (Button letterButton: letterButtons){
-                if(letterButton.getText()==""){
-                    letterButton.setText(letterBag.nextLetter());
-                }
-                else{
-                    break;
-                }
-            }
-
+    /**
+     * calculate points based on word length
+     * @param wordLength int
+     */
+    public void calculatePoints(int wordLength) {
+        switch (wordLength){
+            case 2: points+=1;
+                break;
+            case 3: points+=3;
+                break;
+            case 4: points+=5;
+                break;
+            case 5: points+=7;
+                break;
+            case 6: points+=11;
+                break;
+            case 7: points+=13;
+                break;
+            default:points+=0;
+                break;
         }
-         ***/
-        /**
-        onClear(actionEvent);       //clear board
-        //problem: when to reset letters? is game one word per set of tiles?
-        //or keeping making words out of letters til you can't find any more?
-        if(!letterBag.isEmpty()){   //reset letter buttons
-            for (Button letterButton: letterButtons){
+        pointsLabel.setText(String.valueOf(points));
+    }
+
+    /**
+     * clear answer tiles and reset letter buttons
+     * as long as letterBag is not empty
+     */
+    private void resetTiles (){
+        for(Label answerLetter : answerLabels) {
+            answerLetter.setText("");
+        }
+        for (Button letterButton: letterButtons){
+            if(!letterBag.isEmpty()){
                 letterButton.setText(letterBag.nextLetter());
             }
+            else{
+                gameOverLabel.setText("Game Over, no more letters.");
+                break;
+            }
+
         }
-        else{
-            // TO DO: Tell user game over (restart option?)
-        }
-**/
     }
 }
