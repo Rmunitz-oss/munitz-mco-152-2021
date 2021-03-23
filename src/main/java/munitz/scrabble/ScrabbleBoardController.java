@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ScrabbleBoardController{
     @FXML
-    List<Label> answerLabels;
+    private List<Label> answerLabels;
     @FXML
     List<Button>letterButtons;
     @FXML
@@ -19,16 +19,14 @@ public class ScrabbleBoardController{
     @FXML
     Label gameOverLabel;
 
-    private LetterBag letterBag = new LetterBag();
-    private Scrabble dictionary;
+    private final LetterBag letterBag;
+    private final Scrabble dictionary;
     private int points;
-    public ScrabbleBoardController (){
-        try{
-            dictionary = new Scrabble();
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+
+    // Dependency Injection
+    public ScrabbleBoardController (Scrabble dictionary, LetterBag letterBag){
+            this.dictionary = dictionary;
+            this.letterBag = letterBag;
     }
 
     @FXML

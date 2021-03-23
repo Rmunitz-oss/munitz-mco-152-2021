@@ -5,7 +5,7 @@
 <?import javafx.geometry.Insets?>
 <?import java.util.ArrayList?>
 
-<GridPane fx:controller="munitz.scrabble.ScrabbleBoardController"
+<GridPane
           stylesheets="@ScrabbleBoard.css"
           xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
