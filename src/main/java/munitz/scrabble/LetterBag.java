@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class LetterBag {
 
-    private Stack<String> letterStack;
+    private final Stack<String> letterStack;
 
     public LetterBag(){
         List<String> letterList = Arrays.asList("A", "A", "A", "A", "A", "A", "A", "A", "A",
