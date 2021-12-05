@@ -13,7 +13,7 @@
     <servlet>
         <display-name>DictionaryServlet</display-name>
         <servlet-name>DictionaryServlet</servlet-name>
-        <servlet-class>src/main/java/munitz/scrabble/DictionaryServlet.java</servlet-class>
+        <servlet-class>munitz.scrabble.DictionaryServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
