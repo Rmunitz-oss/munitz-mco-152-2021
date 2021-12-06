@@ -6,7 +6,8 @@ public class Scrabble {
     private final Map<String,String> wordsToDefinition = new HashMap<>();
 
     public Scrabble() throws FileNotFoundException {
-        Scanner reader = new Scanner(new FileReader("src/main/java/munitz/scrabble/dictionary.txt"));
+        //InputStreamReader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream("dictionary.text"));
+        Scanner reader = new Scanner(new FileReader("dictionary.txt "));
         while (reader.hasNext()) {
             wordsToDefinition.put(reader.next(),reader.nextLine().trim());
         }
