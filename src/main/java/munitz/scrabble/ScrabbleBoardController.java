@@ -4,12 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import java.io.FileNotFoundException;
 import java.util.List;
 
 public class ScrabbleBoardController{
     @FXML
-    private List<Label> answerLabels;
+    List<Label> answerLabels;
     @FXML
     List<Button>letterButtons;
     @FXML
@@ -74,7 +73,7 @@ public class ScrabbleBoardController{
     }
 
     /**
-     * clear answer tiles
+     * clear answer tiles and return letters to letter buttons
      * @param actionEvent user clicks clear button
      */
     public void onClear(ActionEvent actionEvent) {

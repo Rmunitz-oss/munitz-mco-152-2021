@@ -5,11 +5,13 @@ import java.util.*;
 public class Scrabble {
     private final Map<String,String> wordsToDefinition = new HashMap<>();
 
-    public Scrabble() throws FileNotFoundException {
-        Scanner reader = new Scanner(new FileReader("src/main/java/munitz/scrabble/dictionary.txt"));
-        while (reader.hasNext()) {
+    public Scrabble() throws IOException {
+        InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+        Scanner reader = new Scanner(in);
+        while(reader.hasNext()){
             wordsToDefinition.put(reader.next(),reader.nextLine().trim());
         }
+
     }
 
     /**
