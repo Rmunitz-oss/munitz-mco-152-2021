@@ -18,7 +18,7 @@ public class DictionaryServlet extends HttpServlet {
             HttpServletResponse response
     ) throws IOException {
         PrintWriter out = response.getWriter();
-        String wordToDefine = request.getParameter("wordToFind");
+        String wordToDefine = request.getParameter("word");
         String result;
         if (dictionary.findWord(wordToDefine)){
             result = dictionary.getDefinition(wordToDefine);

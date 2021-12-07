@@ -9,13 +9,23 @@ public class Scrabble {
         InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
         String line;
+        while ((line = reader.readLine()) != null) {
+            String[] pairs = line.split(" ", 2);
+            String definition = pairs.length > 1 ? pairs[1].trim() : null;
+            wordsToDefinition.put(
+                    pairs[0], //key
+                    definition); //value
+        }
 
+        /*
         while ((line = reader.readLine()) != null) {
             int index = line.indexOf(" ");
             String word = index == -1 ? line : line.substring(0, index);
             String definition = index > -1 ? line.substring(index + 1) : null;
             wordsToDefinition.put(word, definition);
         }
+
+         */
     }
 
     /**
@@ -24,7 +34,12 @@ public class Scrabble {
      * @return true if found, false if not
      */
     public boolean findWord (String wordToFind){
-        return wordsToDefinition.containsKey(wordToFind.toUpperCase());
+        if(wordToFind!=null) {
+            return wordsToDefinition.containsKey(wordToFind.toUpperCase());
+        }
+        else{
+            return false;
+        }
     }
 
     /**
