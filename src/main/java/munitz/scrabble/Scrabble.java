@@ -5,11 +5,16 @@ import java.util.*;
 public class Scrabble {
     private final Map<String,String> wordsToDefinition = new HashMap<>();
 
-    public Scrabble() throws FileNotFoundException {
-        //InputStreamReader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream("dictionary.text"));
-        Scanner reader = new Scanner(new FileReader("dictionary.txt "));
-        while (reader.hasNext()) {
-            wordsToDefinition.put(reader.next(),reader.nextLine().trim());
+    public Scrabble() throws IOException {
+        InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            int index = line.indexOf(" ");
+            String word = index == -1 ? line : line.substring(0, index);
+            String definition = index > -1 ? line.substring(index + 1) : null;
+            wordsToDefinition.put(word, definition);
         }
     }
 
